@@ -1,7 +1,7 @@
 import requests
 import random
 import re
-from pprint import pprint
+
 
 URL = "https://www.autoskola-testy.cz/prohlizeni_otazek.php?random="
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
@@ -14,7 +14,7 @@ PATTERN_CORRECT = r"\"answer otazka_spravne\".+\n*\t*.+<p>(.+)<\/p>"
 PATTERN_WRONG = r"\"answer otazka_spatne\".+\n*\t*.+<p>(.+)<\/p>"
 
 
-def get_question(current_id: int, previous_id: int) -> dict:
+def get_question(current_id: int = random.randint(1, 7), previous_id: int = random.randint(1, 7)) -> dict:
 
     question_text = str()
     question_media = str()
@@ -162,14 +162,3 @@ def get_question(current_id: int, previous_id: int) -> dict:
         "wrong2_text": wrong2_text,
         "wrong2_media": wrong2_media
     }
-
-current_id = random.randint(1, 7)
-previous_id = random.randint(1, 7)
-
-while input() == "":
-    
-    pprint(get_question(current_id, previous_id))
-    print()
-
-    previous_id = current_id
-    current_id = random.randint(1, 7)
