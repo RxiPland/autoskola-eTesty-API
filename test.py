@@ -10,8 +10,8 @@ USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTM
 PATTERN_QUESTION_TEXT = r"\"question-text\".+>(.+)\n*\t*<\/p>"
 PATTERN_QUESTION_MEDIA = r"src=\"(\/img\/[a-zA-z0-9\/]+.[a-zA-Z0-9]+)"
 
-PATTERN_CORRECT = r"<div class=\"answer otazka_spravne\".+\n*\t*.+<p>(.+)<\/p>"
-PATTERN_WRONG = r"<div class=\"answer otazka_spatne\".+\n*\t*.+<p>(.+)<\/p>"
+PATTERN_CORRECT = r"\"answer otazka_spravne\".+\n*\t*.+<p>(.+)<\/p>"
+PATTERN_WRONG = r"\"answer otazka_spatne\".+\n*\t*.+<p>(.+)<\/p>"
 
 
 def get_question(current_id: int, previous_id: int) -> dict:
