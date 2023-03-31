@@ -4,7 +4,7 @@ import requests
 import re
 
 
-URL = "http://www.autoskola-testy.cz/prohlizeni_otazek.php?random="
+URL = "https://www.autoskola-testy.cz/prohlizeni_otazek.php?random="
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
 
 
