@@ -1,3 +1,5 @@
+# https://github.com/RxiPland/autoskola-eTesty-API
+
 import requests
 import random
 import re
