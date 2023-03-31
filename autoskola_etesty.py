@@ -51,6 +51,7 @@ def get_question(current_id: int, previous_id: int) -> dict:
 
         if len(question_media) > 0:
             question_media = question_media[0].strip()
+            question_media = "https://www.autoskola-testy.cz" + question_media
         else:
             question_media = str()
 
@@ -96,6 +97,7 @@ def get_question(current_id: int, previous_id: int) -> dict:
             correct_media: str = correct_media[0].strip()
             correct_media = correct_media.lstrip("<img src=\"")
             correct_media = correct_media.rstrip("\">")
+            correct_media = "https://www.autoskola-testy.cz" + correct_media
 
         else:
             correct_media = str()
@@ -107,6 +109,7 @@ def get_question(current_id: int, previous_id: int) -> dict:
             wrong1_media: str = wrong1_media[0].strip()
             wrong1_media = wrong1_media.lstrip("<img src=\"")
             wrong1_media = wrong1_media.rstrip("\">")
+            wrong1_media = "https://www.autoskola-testy.cz" + wrong1_media
 
         else:
             wrong1_media = str()
@@ -118,6 +121,7 @@ def get_question(current_id: int, previous_id: int) -> dict:
             wrong2_media: str = wrong2_media[1].strip()
             wrong2_media = wrong2_media.lstrip("<img src=\"")
             wrong2_media = wrong2_media.rstrip("\">")
+            wrong2_media = "https://www.autoskola-testy.cz" + wrong2_media
 
         else:
             wrong2_media = str()
