@@ -6,7 +6,21 @@
 
 <br></br>
 
-## Returned dictionary/json:
+## Example of returned dictionary/json:
+
+```
+{
+  "question_text": "Světelný ukazatel nad pozemní komunikací ukazuje:",
+  "question_media": "https://www.autoskola-testy.cz/img/single/0447.jpg",
+  "correct_text": "Nejvyšší dovolenou rychlost jízdy v daném úseku.",
+  "correct_media": "",
+  "wrong1_text": "Okamžitou rychlost jízdy vozidel, která projíždějí daným úsekem.",
+  "wrong1_media": "",
+  "wrong2_text": "Nejnižší dovolenou rychlost jízdy v daném úseku.",
+  "wrong2_media": ""
+}
+```
+## Scheme
 ![image](https://user-images.githubusercontent.com/82058894/229221610-7b1820e1-c67b-46df-a6c5-50c93e8ec454.png)
 
 ## Question type examples:
