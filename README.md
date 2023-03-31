@@ -1,7 +1,7 @@
 # autoskola-eTesty
 
 - I'am not owner of used website (https://www.autoskola-testy.cz/)
-- API for getting random car driving test questions (with answers and images/video if available)
+- API for getting random car driving exam questions (with answers and images/video if available)
 
 <br></br>
 
