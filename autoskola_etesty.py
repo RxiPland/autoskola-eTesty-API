@@ -1,11 +1,10 @@
 # https://github.com/RxiPland/autoskola-eTesty-API
 
 import requests
-import random
 import re
 
 
-URL = "https://www.autoskola-testy.cz/prohlizeni_otazek.php?random="
+URL = "http://www.autoskola-testy.cz/prohlizeni_otazek.php?random="
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
 
 
@@ -16,7 +15,14 @@ PATTERN_CORRECT = r"\"answer otazka_spravne\".+\n*\t*.+<p>(.+)<\/p>"
 PATTERN_WRONG = r"\"answer otazka_spatne\".+\n*\t*.+<p>(.+)<\/p>"
 
 
-def get_question(current_id: int = random.randint(1, 7), previous_id: int = random.randint(1, 7)) -> dict:
+def get_question(current_id: int, previous_id: int) -> dict:
+
+    if current_id < 1 or current_id > 7:
+        raise Exception("Current ID integer must be between 1 and 7")
+
+    elif previous_id < 1 or previous_id > 7:
+        raise Exception("Previous ID integer must be between 1 and 7")
+
 
     question_text = str()
     question_media = str()
