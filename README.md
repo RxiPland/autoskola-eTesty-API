@@ -6,8 +6,18 @@
 
 <br></br>
 
-## Example of returned dictionary/json:
+## Question topic ID's:
+1) Pravidla provozu na pozemních komunikacích
+2) Dopravní značky
+3) Zásady bezpečné jízdy
+4) Dopravní situace
+5) Předpisy o podmínkách provozu vozidel
+6) Předpisy související s provozem
+7) Zdravotnická příprava
 
+<br></br>
+
+## Example of returned dictionary/json:
 ```
 {
   "question_text": "Světelný ukazatel nad pozemní komunikací ukazuje:",
@@ -20,14 +30,6 @@
   "wrong2_media": ""
 }
 ```
-## Question topic ID's
-1) Pravidla provozu na pozemních komunikacích
-2) Dopravní značky
-3) Zásady bezpečné jízdy
-4) Dopravní situace
-5) Předpisy o podmínkách provozu vozidel
-6) Předpisy související s provozem
-7) Zdravotnická příprava
 
 ## Question type examples:
 ![image](https://user-images.githubusercontent.com/82058894/229222391-3b293da2-5160-42c9-acbe-6760db31ba75.png)
