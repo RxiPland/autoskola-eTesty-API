@@ -2,7 +2,7 @@
 
 - I'am not owner of used website (https://www.autoskola-testy.cz/)
 - API for getting random driving school exam questions (with answers and images/video if available)
-- Script with examples -> example.py
+- Script with examples -> [example.py](https://github.com/RxiPland/autoskola_eTesty_API/blob/main/example.py)
 
 ### Implementation:
 ```py
