@@ -15,13 +15,13 @@ PATTERN_CORRECT = r"\"answer otazka_spravne\".+\n*\t*.+<p>(.+)<\/p>"
 PATTERN_WRONG = r"\"answer otazka_spatne\".+\n*\t*.+<p>(.+)<\/p>"
 
 
-def get_question(current_id: int, previous_id: int) -> dict:
+def get_question(question_topic_id: int, previous_topic_id: int) -> dict:
 
-    if current_id < 1 or current_id > 7:
-        raise Exception("Current ID integer must be between 1 and 7")
+    if question_topic_id < 1 or question_topic_id > 7:
+        raise Exception("Question topic ID integer must be between 1 and 7")
 
-    elif previous_id < 1 or previous_id > 7:
-        raise Exception("Previous ID integer must be between 1 and 7")
+    elif previous_topic_id < 1 or previous_topic_id > 7:
+        raise Exception("Previous topic ID integer must be between 1 and 7")
 
 
     question_text = str()
@@ -33,7 +33,7 @@ def get_question(current_id: int, previous_id: int) -> dict:
     wrong2_text = str()
     wrong2_media = str()
 
-    response = requests.get(URL + str(current_id), headers={"User-Agent": USER_AGENT, "Referer": URL + str(previous_id)})
+    response = requests.get(URL + str(question_topic_id), headers={"User-Agent": USER_AGENT, "Referer": URL + str(previous_topic_id)})
     response_text = response.text
 
     if "/img/single" in response_text:
