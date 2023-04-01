@@ -55,7 +55,7 @@ def get_question(question_topic_id: int, previous_topic_id: int) -> dict:
         else:
             question_media = str()
 
-        # CORRECT ANSWER
+        # CORRECT ANSWER TEXT
         correct_text: list[str] = re.findall(PATTERN_CORRECT, response_text)
 
         if len(correct_text) > 0:
@@ -63,7 +63,7 @@ def get_question(question_topic_id: int, previous_topic_id: int) -> dict:
         else:
             correct_text = str()
 
-        # WRONG ANSWER #1
+        # WRONG ANSWER #1 TEXT
         wrong1_text: list[str] = re.findall(PATTERN_WRONG, response_text)
 
         if len(wrong1_text) > 0:
@@ -71,7 +71,7 @@ def get_question(question_topic_id: int, previous_topic_id: int) -> dict:
         else:
             wrong1_text = str()
 
-        # WRONG ANSWER #2
+        # WRONG ANSWER #2 TEXT
         wrong2_text: list[str] = re.findall(PATTERN_WRONG, response_text)
 
         if len(wrong2_text) > 1:
@@ -102,7 +102,7 @@ def get_question(question_topic_id: int, previous_topic_id: int) -> dict:
         else:
             correct_media = str()
 
-        # WRONG ANSWER MEDIA #1
+        # WRONG ANSWER #1 MEDIA
         wrong1_media: list[str] = re.findall(PATTERN_WRONG, response_text)
 
         if len(wrong1_media) > 0:
@@ -114,7 +114,7 @@ def get_question(question_topic_id: int, previous_topic_id: int) -> dict:
         else:
             wrong1_media = str()
 
-        # WRONG ANSWER MEDIA #2
+        # WRONG ANSWER #2 MEDIA
         wrong2_media: list[str] = re.findall(PATTERN_WRONG, response_text)
 
         if len(wrong2_media) > 1:
