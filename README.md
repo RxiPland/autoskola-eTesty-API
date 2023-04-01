@@ -9,7 +9,7 @@
 import autoskola_etesty as etesty
 
 # integers must be between 1 and 7
-etesty.get_question(question_topic_id: int, previous_topic_id: int)
+etesty.get_question(question_topic_id = int, previous_topic_id = int)
 ```
 
 <br></br>
