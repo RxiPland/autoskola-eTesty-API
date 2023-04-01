@@ -8,8 +8,8 @@
 ```py
 import autoskola_etesty as etesty
 
-# int must be between 1 and 7
-etesty.get_question(int, int)
+# integers must be between 1 and 7
+etesty.get_question(question_topic_id: int, previous_topic_id: int)
 ```
 
 <br></br>
