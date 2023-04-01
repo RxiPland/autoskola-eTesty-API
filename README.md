@@ -28,20 +28,20 @@ etesty.get_question(question_topic_id = int, previous_topic_id = int)
 ## Example of returned dictionary/json:
 ```json
 {
-	"question_text": "Řidič motorového vozidla z výhledu v dopravní situaci:",
-	"question_media": "https://www.autoskola-testy.cz/img/single/219004.mp4",
+    "question_text": "Řidič motorového vozidla z výhledu v dopravní situaci:",
+    "question_media": "https://www.autoskola-testy.cz/img/single/219004.mp4",
 
-	"correct_text": "mohl odbočit vpravo, přičemž nesměl ohrozit a omezit vozidla jedoucí ve vyhrazeném jízdním pruhu.",
-	"correct_media": "",
+    "correct_text": "mohl odbočit vpravo, přičemž nesměl ohrozit a omezit vozidla jedoucí ve vyhrazeném jízdním pruhu.",
+    "correct_media": "",
 
-	"wrong1_text": "porušil pravidla silničního provozu tím, že odbočil přes vyhrazený jízdní pruh.",
-	"wrong1_media": "",
+    "wrong1_text": "porušil pravidla silničního provozu tím, že odbočil přes vyhrazený jízdní pruh.",
+    "wrong1_media": "",
 
-	"wrong2_text": "mohl odbočit vpravo bez ohledu na vozidla jedoucí ve vyhrazeném jízdním pruhu, která nesměla ohrozit a omezit vozidla odbočující z průběžného pruhu.",
-	"wrong2_media": "",
+    "wrong2_text": "mohl odbočit vpravo bez ohledu na vozidla jedoucí ve vyhrazeném jízdním pruhu, která nesměla ohrozit a omezit vozidla odbočující z průběžného pruhu.",
+    "wrong2_media": "",
 
-	"question_id": "22020002",
-	"points": "4"
+    "question_id": "22020002",
+    "points": "4"
 }
 ```
 
