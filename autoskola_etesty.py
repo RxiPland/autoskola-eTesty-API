@@ -34,12 +34,12 @@ def get_question(question_topic_id: int, previous_topic_id: int) -> dict:
     wrong2_media = str()
 
     response = requests.get(URL + str(question_topic_id), headers={"User-Agent": USER_AGENT, "Referer": URL + str(previous_topic_id)})
-    response_text = response.text
+    response_html = response.text
 
-    if "/img/single" in response_text:
+    if "/img/single" in response_html:
 
         # QUESTION TEXT
-        question_text: list[str] = re.findall(PATTERN_QUESTION_TEXT, response_text)
+        question_text: list[str] = re.findall(PATTERN_QUESTION_TEXT, response_html)
 
         if len(question_text) > 0:
             question_text = question_text[0].strip()
@@ -47,7 +47,7 @@ def get_question(question_topic_id: int, previous_topic_id: int) -> dict:
             question_text = str()
         
         # QUESTION MEDIA
-        question_media: list[str] = re.findall(PATTERN_QUESTION_MEDIA, response_text)
+        question_media: list[str] = re.findall(PATTERN_QUESTION_MEDIA, response_html)
 
         if len(question_media) > 0:
             question_media = question_media[0].strip()
@@ -56,7 +56,7 @@ def get_question(question_topic_id: int, previous_topic_id: int) -> dict:
             question_media = str()
 
         # CORRECT ANSWER TEXT
-        correct_text: list[str] = re.findall(PATTERN_CORRECT, response_text)
+        correct_text: list[str] = re.findall(PATTERN_CORRECT, response_html)
 
         if len(correct_text) > 0:
             correct_text = correct_text[0].strip()
@@ -64,7 +64,7 @@ def get_question(question_topic_id: int, previous_topic_id: int) -> dict:
             correct_text = str()
 
         # WRONG ANSWER #1 TEXT
-        wrong1_text: list[str] = re.findall(PATTERN_WRONG, response_text)
+        wrong1_text: list[str] = re.findall(PATTERN_WRONG, response_html)
 
         if len(wrong1_text) > 0:
             wrong1_text = wrong1_text[0].strip()
@@ -72,7 +72,7 @@ def get_question(question_topic_id: int, previous_topic_id: int) -> dict:
             wrong1_text = str()
 
         # WRONG ANSWER #2 TEXT
-        wrong2_text: list[str] = re.findall(PATTERN_WRONG, response_text)
+        wrong2_text: list[str] = re.findall(PATTERN_WRONG, response_html)
 
         if len(wrong2_text) > 1:
             wrong2_text = wrong2_text[1].strip()
@@ -80,10 +80,10 @@ def get_question(question_topic_id: int, previous_topic_id: int) -> dict:
             wrong2_text = str()
 
 
-    elif "/img/tripple/" in response_text:
+    elif "/img/tripple/" in response_html:
 
         # QUESTION TEXT
-        question_text: list[str] = re.findall(PATTERN_QUESTION_TEXT, response_text)
+        question_text: list[str] = re.findall(PATTERN_QUESTION_TEXT, response_html)
 
         if len(question_text) > 0:
             question_text = question_text[0].strip()
@@ -91,7 +91,7 @@ def get_question(question_topic_id: int, previous_topic_id: int) -> dict:
             question_text = str()
 
         # CORRECT ANSWER MEDIA
-        correct_media: list[str] = re.findall(PATTERN_CORRECT, response_text)
+        correct_media: list[str] = re.findall(PATTERN_CORRECT, response_html)
 
         if len(correct_media) > 0:
             correct_media: str = correct_media[0].strip()
@@ -103,7 +103,7 @@ def get_question(question_topic_id: int, previous_topic_id: int) -> dict:
             correct_media = str()
 
         # WRONG ANSWER #1 MEDIA
-        wrong1_media: list[str] = re.findall(PATTERN_WRONG, response_text)
+        wrong1_media: list[str] = re.findall(PATTERN_WRONG, response_html)
 
         if len(wrong1_media) > 0:
             wrong1_media: str = wrong1_media[0].strip()
@@ -115,7 +115,7 @@ def get_question(question_topic_id: int, previous_topic_id: int) -> dict:
             wrong1_media = str()
 
         # WRONG ANSWER #2 MEDIA
-        wrong2_media: list[str] = re.findall(PATTERN_WRONG, response_text)
+        wrong2_media: list[str] = re.findall(PATTERN_WRONG, response_html)
 
         if len(wrong2_media) > 1:
             wrong2_media: str = wrong2_media[1].strip()
@@ -129,7 +129,7 @@ def get_question(question_topic_id: int, previous_topic_id: int) -> dict:
     else:
 
         # QUESTION TEXT
-        question_text: list[str] = re.findall(PATTERN_QUESTION_TEXT, response_text)
+        question_text: list[str] = re.findall(PATTERN_QUESTION_TEXT, response_html)
 
         if len(question_text) > 0:
             question_text = question_text[0].strip()
@@ -137,7 +137,7 @@ def get_question(question_topic_id: int, previous_topic_id: int) -> dict:
             question_text = str()
 
         # CORRECT ANSWER TEXT
-        correct_text: list[str] = re.findall(PATTERN_CORRECT, response_text)
+        correct_text: list[str] = re.findall(PATTERN_CORRECT, response_html)
 
         if len(correct_text) > 0:
             correct_text = correct_text[0].strip()
@@ -145,7 +145,7 @@ def get_question(question_topic_id: int, previous_topic_id: int) -> dict:
             correct_text = str()
 
         # WRONG ANSWER TEXT #1
-        wrong1_text: list[str] = re.findall(PATTERN_WRONG, response_text)
+        wrong1_text: list[str] = re.findall(PATTERN_WRONG, response_html)
 
         if len(wrong1_text) > 0:
             wrong1_text = wrong1_text[0].strip()
@@ -153,7 +153,7 @@ def get_question(question_topic_id: int, previous_topic_id: int) -> dict:
             wrong1_text = str()
 
         # WRONG ANSWER TEXT #2
-        wrong2_text: list[str] = re.findall(PATTERN_WRONG, response_text)
+        wrong2_text: list[str] = re.findall(PATTERN_WRONG, response_html)
 
         if len(wrong2_text) > 1:
             wrong2_text = wrong2_text[1].strip()
