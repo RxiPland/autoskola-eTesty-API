@@ -14,6 +14,9 @@ PATTERN_QUESTION_MEDIA = r"src=\"(\/img\/[a-zA-z0-9\/]+.[a-zA-Z0-9]+)"
 PATTERN_CORRECT = r"\"answer otazka_spravne\".+\n*\t*.+<p>(.+)<\/p>"
 PATTERN_WRONG = r"\"answer otazka_spatne\".+\n*\t*.+<p>(.+)<\/p>"
 
+PATTER_QUESTION_ID = r"má kód (\d+)"
+PATTER_POINTS = r"za její správné zodpovězení v testech se získá.+(\d) body"
+
 
 def get_question(question_topic_id: int, previous_topic_id: int) -> dict:
 
@@ -32,6 +35,9 @@ def get_question(question_topic_id: int, previous_topic_id: int) -> dict:
     wrong1_media = str()
     wrong2_text = str()
     wrong2_media = str()
+    question_id = str()
+    points = str()
+
 
     response = requests.get(URL + str(question_topic_id), headers={"User-Agent": USER_AGENT, "Referer": URL + str(previous_topic_id)})
     response_html = response.text
@@ -161,6 +167,23 @@ def get_question(question_topic_id: int, previous_topic_id: int) -> dict:
             wrong2_text = str()
 
 
+    # QUESTION ID
+    question_id: list[str] = re.findall(PATTER_QUESTION_ID, response_html)
+
+    if len(question_id) > 0:
+        question_id = question_id[0].strip()
+    else:
+        question_id = str()
+    
+    # POINTS
+    points: list[str] = re.findall(PATTER_POINTS, response_html)
+
+    if len(points) > 0:
+        points = points[0].strip()
+    else:
+        points = str()
+
+
     return {
         "question_text": question_text,
         "question_media": question_media,
@@ -172,5 +195,8 @@ def get_question(question_topic_id: int, previous_topic_id: int) -> dict:
         "wrong1_media": wrong1_media,
 
         "wrong2_text": wrong2_text,
-        "wrong2_media": wrong2_media
+        "wrong2_media": wrong2_media,
+
+        "question_id": question_id,
+        "points": points
     }
