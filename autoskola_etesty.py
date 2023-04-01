@@ -15,7 +15,7 @@ PATTERN_CORRECT = r"\"answer otazka_spravne\".+\n*\t*.+<p>(.+)<\/p>"
 PATTERN_WRONG = r"\"answer otazka_spatne\".+\n*\t*.+<p>(.+)<\/p>"
 
 PATTER_QUESTION_ID = r"má kód (\d+)"
-PATTER_POINTS = r"za její správné zodpovězení v testech se získá.+(\d) body"
+PATTER_POINTS = r"za její správné zodpovězení v testech se získá.+(\d) body?"
 
 
 def get_question(question_topic_id: int, previous_topic_id: int) -> dict:
