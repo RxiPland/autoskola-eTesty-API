@@ -30,10 +30,13 @@ etesty.get_question(question_topic_id: int, previous_topic_id: int)
 {
   "question_text": "Světelný ukazatel nad pozemní komunikací ukazuje:",
   "question_media": "https://www.autoskola-testy.cz/img/single/0447.jpg",
+  
   "correct_text": "Nejvyšší dovolenou rychlost jízdy v daném úseku.",
   "correct_media": "",
+  
   "wrong1_text": "Okamžitou rychlost jízdy vozidel, která projíždějí daným úsekem.",
   "wrong1_media": "",
+  
   "wrong2_text": "Nejnižší dovolenou rychlost jízdy v daném úseku.",
   "wrong2_media": ""
 }
