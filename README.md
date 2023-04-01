@@ -4,6 +4,14 @@
 - API for getting random driving school exam questions (with answers and images/video if available)
 - Script with examples -> example.py
 
+### Implementation:
+```py
+import autoskola_etesty as etesty
+
+# int must be between 1 and 7
+etesty.get_question(int, int)
+```
+
 <br></br>
 
 ## Question topic ID's:
@@ -18,7 +26,7 @@
 <br></br>
 
 ## Example of returned dictionary/json:
-```
+```json
 {
   "question_text": "Světelný ukazatel nad pozemní komunikací ukazuje:",
   "question_media": "https://www.autoskola-testy.cz/img/single/0447.jpg",
