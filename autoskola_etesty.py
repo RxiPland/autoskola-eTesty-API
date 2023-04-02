@@ -198,5 +198,6 @@ def get_question(question_topic_id: int, previous_topic_id: int) -> dict:
         "wrong2_media": wrong2_media,
 
         "question_id": question_id,
+        "topic_id": question_topic_id,
         "points": points
     }
