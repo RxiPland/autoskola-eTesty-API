@@ -41,6 +41,7 @@ etesty.get_question(question_topic_id = int, previous_topic_id = int)
     "wrong2_media": "",
 
     "question_id": "06060304",
+    "topic_id": 2,
     "points": "1"
 }
 ```
