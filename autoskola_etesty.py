@@ -18,13 +18,10 @@ PATTER_QUESTION_ID = r"má kód (\d+)"
 PATTER_POINTS = r"za její správné zodpovězení v testech se získá.+(\d) body?"
 
 
-def get_question(question_topic_id: int, previous_topic_id: int) -> dict:
+def get_question(question_topic_id: int) -> dict:
 
     if question_topic_id < 1 or question_topic_id > 7:
         raise Exception("Question topic ID integer must be between 1 and 7")
-
-    elif previous_topic_id < 1 or previous_topic_id > 7:
-        raise Exception("Previous topic ID integer must be between 1 and 7")
 
 
     question_text = str()
@@ -39,7 +36,7 @@ def get_question(question_topic_id: int, previous_topic_id: int) -> dict:
     points = str()
 
 
-    response = requests.get(URL + str(question_topic_id), headers={"User-Agent": USER_AGENT, "Referer": URL + str(previous_topic_id)})
+    response = requests.get(URL + str(question_topic_id), headers={"User-Agent": USER_AGENT, "Referer": URL + str(question_topic_id)})
     response_html = response.text
 
     if "/img/single" in response_html:
