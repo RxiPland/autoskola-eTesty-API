@@ -45,8 +45,9 @@ etesty.get_question(question_topic_id = int)
     "points": "1"
 }
 ```
+<br></br>
 
-## Question type examples:
+# Question type examples:
 ### Text question and text answers
 ![image](https://user-images.githubusercontent.com/82058894/229222391-3b293da2-5160-42c9-acbe-6760db31ba75.png)
 ##
