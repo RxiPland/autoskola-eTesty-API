@@ -8,8 +8,21 @@
 ```py
 import autoskola_etesty as etesty
 
-# integer must be between 1 and 7
-etesty.get_question(question_topic_id = int)
+# integers must be between 1 and 7
+etesty.get_random_question(question_topic_id = int)
+"""
+Output:
+{'question_text': '"Chodec":', 'question_media': '', 'correct_text': 'Je i osoba, která se pohybuje na kolečkových bruslích nebo obdobném sportovním vybavení.', 'correct_media': '', 'wrong1_text': 'Není osoba, která se pohybuje na lyžích, kolečkových bruslích nebo obdobném sportovním vybavení.', 'wrong1_media': '', 'wrong2_text': 'Je výhradně kráčející osoba.', 'wrong2_media': '', 'question_id': '10060002', 'topic_id': 1, 'points': '2'}
+
+"""
+
+etesty.get_questions_urls(question_topic_id = int)
+
+"""
+Output:
+[('06040213', 'https://www.autoskola-testy.cz/prohlizeni_otazek.php?otazka=811-zraneny_si_po_dopravni_nehode_stezuje_na_bolesti_bricha_a_pocit_zizne'), ('06050284', 'https://www.autoskola-testy.cz/prohlizeni_otazek.php?otazka=813-prvni_pomoc_je_povinen_poskytnout'), ('06060268', 'https://www.autoskola-testy.cz/prohlizeni_otazek.php?otazka=834-hrozi_trestni_postih_pokud_neposkytnete_prvni_pomoc'), ...
+
+"""
 ```
 
 <br></br>
