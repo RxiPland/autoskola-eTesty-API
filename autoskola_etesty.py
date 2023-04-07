@@ -201,9 +201,9 @@ def get_random_question(question_topic_id: int) -> dict:
     }
 
 
-def get_questions_urls(question_topic_id: int) -> list[tuple]:
+def get_questions_urls(questions_topic_id: int) -> list[tuple]:
 
-    if question_topic_id < 1 or question_topic_id > 7:
+    if questions_topic_id < 1 or questions_topic_id > 7:
         raise Exception("Question topic ID integer must be between 1 and 7")
     
 
@@ -213,7 +213,7 @@ def get_questions_urls(question_topic_id: int) -> list[tuple]:
 
     final: list[tuple] = list()
 
-    response = requests.get(URL + str(question_topic_id), headers={"User-Agent": USER_AGENT, "Referer": URL + str(question_topic_id)})
+    response = requests.get(URL + str(questions_topic_id), headers={"User-Agent": USER_AGENT, "Referer": URL + str(questions_topic_id)})
     response_html = response.text
 
     regex_temp: list[str] = re.findall(PATTERN_QUESTIONS_URLS, response_html)

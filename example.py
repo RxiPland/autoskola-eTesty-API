@@ -32,5 +32,5 @@ print(etesty.get_random_question(question_topic_id=7))
 print()
 
 # All questions urls
-print(etesty.get_questions_urls(question_topic_id=7))
+print(etesty.get_questions_urls(questions_topic_id=7))
 print()
