@@ -4,24 +4,25 @@ import requests
 import re
 
 
-URL = "https://www.autoskola-testy.cz/prohlizeni_otazek.php?random="
+
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
 
 
-PATTERN_QUESTION_TEXT = r"\"question-text\".+>(.+)\n*\t*<\/p>"
-PATTERN_QUESTION_MEDIA = r"src=\"(\/img\/[a-zA-z0-9\/]+.[a-zA-Z0-9]+)"
-
-PATTERN_CORRECT = r"\"answer otazka_spravne\".+\n*\t*.+<p>(.+)<\/p>"
-PATTERN_WRONG = r"\"answer otazka_spatne\".+\n*\t*.+<p>(.+)<\/p>"
-
-PATTER_QUESTION_ID = r"má kód (\d+)"
-PATTER_POINTS = r"za její správné zodpovězení v testech se získá.+(\d) body?"
-
-
-def get_question(question_topic_id: int) -> dict:
+def get_random_question(question_topic_id: int) -> dict:
 
     if question_topic_id < 1 or question_topic_id > 7:
         raise Exception("Question topic ID integer must be between 1 and 7")
+    
+    URL = "https://www.autoskola-testy.cz/prohlizeni_otazek.php?random="
+
+    PATTERN_QUESTION_TEXT = r"\"question-text\".+>(.+)\n*\t*<\/p>"
+    PATTERN_QUESTION_MEDIA = r"src=\"(\/img\/[a-zA-z0-9\/]+.[a-zA-Z0-9]+)"
+
+    PATTERN_CORRECT = r"\"answer otazka_spravne\".+\n*\t*.+<p>(.+)<\/p>"
+    PATTERN_WRONG = r"\"answer otazka_spatne\".+\n*\t*.+<p>(.+)<\/p>"
+
+    PATTER_QUESTION_ID = r"má kód (\d+)"
+    PATTER_POINTS = r"za její správné zodpovězení v testech se získá.+(\d) body?"
 
 
     question_text = str()
@@ -198,3 +199,28 @@ def get_question(question_topic_id: int) -> dict:
         "topic_id": question_topic_id,
         "points": points
     }
+
+
+def get_questions_urls(question_topic_id: int) -> list[tuple]:
+
+    if question_topic_id < 1 or question_topic_id > 7:
+        raise Exception("Question topic ID integer must be between 1 and 7")
+    
+
+    URL = "https://www.autoskola-testy.cz/prohlizeni_otazek.php?okruh="
+
+    PATTERN_QUESTIONS_URLS = r"kód (\d+), <a href=\"(\S+)\">"
+
+    final: list[tuple] = list()
+
+    response = requests.get(URL + str(question_topic_id), headers={"User-Agent": USER_AGENT, "Referer": URL + str(question_topic_id)})
+    response_html = response.text
+
+    regex_temp: list[str] = re.findall(PATTERN_QUESTIONS_URLS, response_html)
+
+    for found in regex_temp:
+
+        final.append(tuple([found[0], "https://www.autoskola-testy.cz/prohlizeni_otazek.php" + found[1]]))
+
+
+    return final
