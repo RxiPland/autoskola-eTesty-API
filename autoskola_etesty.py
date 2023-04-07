@@ -206,10 +206,10 @@ def get_questions_urls(questions_topic_id: int) -> list[tuple]:
     if questions_topic_id < 1 or questions_topic_id > 7:
         raise Exception("Question topic ID integer must be between 1 and 7")
     
-
     URL = "https://www.autoskola-testy.cz/prohlizeni_otazek.php?okruh="
 
     PATTERN_QUESTIONS_URLS = r"kód (\d+), <a href=\"(\S+)\">"
+
 
     final: list[tuple] = list()
 
