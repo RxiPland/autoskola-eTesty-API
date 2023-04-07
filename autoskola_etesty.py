@@ -422,7 +422,7 @@ def get_questions_urls(questions_topic_id: int) -> list[tuple]:
 
     final: list[tuple] = list()
 
-    response = requests.get(URL + str(questions_topic_id), headers={"User-Agent": USER_AGENT, "Referer": URL + str(questions_topic_id)})
+    response = requests.get(URL + str(questions_topic_id), headers={"User-Agent": USER_AGENT, "Referer": "https://www.autoskola-testy.cz/prohlizeni_otazek.php"})
     response_html = response.text
 
     regex_temp: list[str] = re.findall(PATTERN_QUESTIONS_URLS, response_html)
