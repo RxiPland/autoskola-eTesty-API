@@ -2,6 +2,7 @@
 
 - I'am not owner of used website (https://www.autoskola-testy.cz/)
 - API for getting random driving school exam questions (with answers and images/video if available)
+- URLs from get_questions_urls() can be used in get_question() function
 - Script with examples -> [example.py](https://github.com/RxiPland/autoskola_eTesty_API/blob/main/example.py)
 
 ### Implementation:
