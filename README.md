@@ -45,12 +45,17 @@ etesty.get_question(question_topic_id = int)
     "points": "1"
 }
 ```
+<br></br>
 
-## Question type examples:
+# Question type examples:
+### Text question and text answers
 ![image](https://user-images.githubusercontent.com/82058894/229222391-3b293da2-5160-42c9-acbe-6760db31ba75.png)
 ##
-![image](https://user-images.githubusercontent.com/82058894/229223171-c5835064-6c8d-4a3a-a5b2-b77edb00d647.png)
-##
+### Image question and text answers
 ![image](https://user-images.githubusercontent.com/82058894/229223445-d1571559-5314-4a6a-9c9c-972bdba6608f.png)
 ##
+### Text question and image answers
+![image](https://user-images.githubusercontent.com/82058894/229223171-c5835064-6c8d-4a3a-a5b2-b77edb00d647.png)
+##
+### Image question and image answers
 ![image](https://user-images.githubusercontent.com/82058894/230226675-3756f168-29ef-494b-8c28-43591cf6ecfd.png)
