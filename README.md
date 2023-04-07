@@ -17,7 +17,6 @@ Output:
 """
 
 etesty.get_questions_urls(question_topic_id = int)
-
 """
 Output:
 [('06040213', 'https://www.autoskola-testy.cz/prohlizeni_otazek.php?otazka=811-zraneny_si_po_dopravni_nehode_stezuje_na_bolesti_bricha_a_pocit_zizne'), ('06050284', 'https://www.autoskola-testy.cz/prohlizeni_otazek.php?otazka=813-prvni_pomoc_je_povinen_poskytnout'), ('06060268', 'https://www.autoskola-testy.cz/prohlizeni_otazek.php?otazka=834-hrozi_trestni_postih_pokud_neposkytnete_prvni_pomoc'), ...
