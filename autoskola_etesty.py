@@ -8,6 +8,9 @@ import re
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
 
 def get_question(url: str) -> dict:
+    """
+    Function will return dictionary with question based on full question URL
+    """
 
     PATTERN_VALID_URL = r"https?:\/\/w{0,3}\.?autoskola-testy\.cz\/prohlizeni_otazek\.php\?otazka=\d+-[a-zA-Z_0-9]+"
 
@@ -218,6 +221,9 @@ def get_question(url: str) -> dict:
 
 
 def get_random_question(question_topic_id: int) -> dict:
+    """
+    Function will return dictionary with random question based on topic ID (1-7)
+    """
 
     if question_topic_id < 1 or question_topic_id > 7:
         raise Exception("Question topic ID integer must be between 1 and 7")
@@ -411,6 +417,9 @@ def get_random_question(question_topic_id: int) -> dict:
 
 
 def get_questions_urls(questions_topic_id: int) -> list[tuple]:
+    """
+    Function will return list of tuples -> (question ID, question URL) of all questions based on topic id (1-7)
+    """
 
     if questions_topic_id < 1 or questions_topic_id > 7:
         raise Exception("Question topic ID integer must be between 1 and 7")
